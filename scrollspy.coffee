@@ -4,7 +4,7 @@ class ScrollSpy
 		aElements = document.getElementById(@navId).getElementsByTagName('a')
 		
 		@track[a.attributes.href.value.substr(1)] = a for a in aElements
-		console.log @track
+		#console.log @track
 
 		self = this
 		window.onscroll = () ->
@@ -24,15 +24,15 @@ class ScrollSpy
 				leastTop = elemTop
 				navElem = @track[id]
 				targetElem = elem
-				console.log id, elemTop, '<<<'
-			else
-				console.log '', id, elemTop
+				#console.log id, elemTop, '<<<'
+			#else
+			#	console.log '', id, elemTop
 
 		if @prevElem
 			@prevElem.parentNode.className = ''
 		navElem.parentNode.className = 'active'
 		@prevElem = navElem
-		console.log navElem
+		#console.log navElem
 
 
 
